@@ -162,10 +162,7 @@
   {
     "name": "Takeda",
     "careers_url": "https://takeda.wd3.myworkdayjobs.com/takedajobs",
-    "ats": "workday",
-    "tenant": "takeda",
-    "host": "wd3",
-    "site": "takedajobs"
+    "ats": null
   },
   {
     "name": "Astellas Pharma",
@@ -234,16 +231,12 @@
   {
     "name": "Sarepta Therapeutics",
     "careers_url": "https://boards.greenhouse.io/sareptatherapeutics",
-    "ats": "greenhouse",
-    "slug": "sareptatherapeutics"
+    "ats": null
   },
   {
     "name": "Neurocrine Biosciences",
     "careers_url": "https://neurocrine.wd5.myworkdayjobs.com/Careers",
-    "ats": "workday",
-    "tenant": "neurocrine",
-    "host": "wd5",
-    "site": "Careers"
+    "ats": null
   },
   {
     "name": "Jazz Pharmaceuticals",
@@ -270,14 +263,12 @@
   {
     "name": "Apellis Pharmaceuticals",
     "careers_url": "https://boards.greenhouse.io/apellispharmaceuticals",
-    "ats": "greenhouse",
-    "slug": "apellispharmaceuticals"
+    "ats": null
   },
   {
     "name": "Madrigal Pharmaceuticals",
     "careers_url": "https://boards.greenhouse.io/madrigalpharmaceuticals",
-    "ats": "greenhouse",
-    "slug": "madrigalpharmaceuticals"
+    "ats": null
   },
   {
     "name": "Acadia Pharmaceuticals",
@@ -306,8 +297,7 @@
   {
     "name": "Halozyme Therapeutics",
     "careers_url": "https://boards.greenhouse.io/halozyme",
-    "ats": "greenhouse",
-    "slug": "halozyme"
+    "ats": null
   },
   {
     "name": "Beam Therapeutics",
@@ -318,20 +308,17 @@
   {
     "name": "Intellia Therapeutics",
     "careers_url": "https://boards.greenhouse.io/intelliatherapeutics",
-    "ats": "greenhouse",
-    "slug": "intelliatherapeutics"
+    "ats": null
   },
   {
     "name": "Editas Medicine",
     "careers_url": "https://boards.greenhouse.io/editasmedicine",
-    "ats": "greenhouse",
-    "slug": "editasmedicine"
+    "ats": null
   },
   {
     "name": "Verve Therapeutics",
     "careers_url": "https://boards.greenhouse.io/vervetherapeutics",
-    "ats": "greenhouse",
-    "slug": "vervetherapeutics"
+    "ats": null
   },
   {
     "name": "Prime Medicine",
@@ -348,8 +335,7 @@
   {
     "name": "Schrödinger",
     "careers_url": "https://boards.greenhouse.io/schrodinger",
-    "ats": "greenhouse",
-    "slug": "schrodinger"
+    "ats": null
   },
   {
     "name": "Relay Therapeutics",
@@ -360,26 +346,22 @@
   {
     "name": "Insitro",
     "careers_url": "https://boards.greenhouse.io/insitro",
-    "ats": "greenhouse",
-    "slug": "insitro"
+    "ats": null
   },
   {
     "name": "Adaptive Biotechnologies",
     "careers_url": "https://boards.greenhouse.io/adaptivebiotech",
-    "ats": "greenhouse",
-    "slug": "adaptivebiotech"
+    "ats": null
   },
   {
     "name": "Tempus AI",
     "careers_url": "https://boards.greenhouse.io/tempus",
-    "ats": "greenhouse",
-    "slug": "tempus"
+    "ats": null
   },
   {
     "name": "10x Genomics",
     "careers_url": "https://jobs.lever.co/10xgenomics",
-    "ats": "lever",
-    "slug": "10xgenomics"
+    "ats": null
   },
   {
     "name": "Illumina",
@@ -398,8 +380,7 @@
   {
     "name": "Guardant Health",
     "careers_url": "https://boards.greenhouse.io/guardanthealth",
-    "ats": "greenhouse",
-    "slug": "guardanthealth"
+    "ats": null
   },
   {
     "name": "Exact Sciences",
@@ -424,8 +405,7 @@
   {
     "name": "Arcus Biosciences",
     "careers_url": "https://boards.greenhouse.io/arcusbiosciences",
-    "ats": "greenhouse",
-    "slug": "arcusbiosciences"
+    "ats": null
   },
   {
     "name": "Arvinas",
@@ -442,8 +422,7 @@
   {
     "name": "C4 Therapeutics",
     "careers_url": "https://boards.greenhouse.io/c4therapeutics",
-    "ats": "greenhouse",
-    "slug": "c4therapeutics"
+    "ats": null
   },
   {
     "name": "Blueprint Medicines",
@@ -460,8 +439,7 @@
   {
     "name": "Avidity Biosciences",
     "careers_url": "https://boards.greenhouse.io/aviditybiosciences",
-    "ats": "greenhouse",
-    "slug": "aviditybiosciences"
+    "ats": null
   },
   {
     "name": "Cytokinetics",
@@ -478,44 +456,37 @@
   {
     "name": "Viking Therapeutics",
     "careers_url": "https://boards.greenhouse.io/vikingtherapeutics",
-    "ats": "greenhouse",
-    "slug": "vikingtherapeutics"
+    "ats": null
   },
   {
     "name": "89bio",
     "careers_url": "https://boards.greenhouse.io/89bio",
-    "ats": "greenhouse",
-    "slug": "89bio"
+    "ats": null
   },
   {
     "name": "Structure Therapeutics",
     "careers_url": "https://boards.greenhouse.io/structuretherapeutics",
-    "ats": "greenhouse",
-    "slug": "structuretherapeutics"
+    "ats": null
   },
   {
     "name": "Replimune",
     "careers_url": "https://boards.greenhouse.io/replimune",
-    "ats": "greenhouse",
-    "slug": "replimune"
+    "ats": null
   },
   {
     "name": "Krystal Biotech",
     "careers_url": "https://boards.greenhouse.io/krystalbiotech",
-    "ats": "greenhouse",
-    "slug": "krystalbiotech"
+    "ats": null
   },
   {
     "name": "PTC Therapeutics",
     "careers_url": "https://boards.greenhouse.io/ptcbio",
-    "ats": "greenhouse",
-    "slug": "ptcbio"
+    "ats": null
   },
   {
     "name": "Travere Therapeutics",
     "careers_url": "https://boards.greenhouse.io/traveretherapeutics",
-    "ats": "greenhouse",
-    "slug": "traveretherapeutics"
+    "ats": null
   },
   {
     "name": "Mirum Pharmaceuticals",
@@ -532,14 +503,12 @@
   {
     "name": "Caribou Biosciences",
     "careers_url": "https://boards.greenhouse.io/cariboubiosciences",
-    "ats": "greenhouse",
-    "slug": "cariboubiosciences"
+    "ats": null
   },
   {
     "name": "Allogene Therapeutics",
     "careers_url": "https://boards.greenhouse.io/allogene",
-    "ats": "greenhouse",
-    "slug": "allogene"
+    "ats": null
   },
   {
     "name": "Arcellx",
@@ -550,8 +519,7 @@
   {
     "name": "Sana Biotechnology",
     "careers_url": "https://boards.greenhouse.io/sanabiotechnology",
-    "ats": "greenhouse",
-    "slug": "sanabiotechnology"
+    "ats": null
   },
   {
     "name": "Lyell Immunopharma",
@@ -562,14 +530,12 @@
   {
     "name": "Rocket Pharmaceuticals",
     "careers_url": "https://boards.greenhouse.io/rocketpharma",
-    "ats": "greenhouse",
-    "slug": "rocketpharma"
+    "ats": null
   },
   {
     "name": "Ultragenyx Pharmaceutical",
     "careers_url": "https://boards.greenhouse.io/ultragenyx",
-    "ats": "greenhouse",
-    "slug": "ultragenyx"
+    "ats": null
   },
   {
     "name": "Generation Bio",
@@ -586,8 +552,7 @@
   {
     "name": "Wave Life Sciences",
     "careers_url": "https://boards.greenhouse.io/wavelifesciences",
-    "ats": "greenhouse",
-    "slug": "wavelifesciences"
+    "ats": null
   },
   {
     "name": "Stoke Therapeutics",
@@ -606,14 +571,12 @@
   {
     "name": "Vir Biotechnology",
     "careers_url": "https://boards.greenhouse.io/virbiotechnology",
-    "ats": "greenhouse",
-    "slug": "virbiotechnology"
+    "ats": null
   },
   {
     "name": "Denali Therapeutics",
     "careers_url": "https://boards.greenhouse.io/denalitherapeutics",
-    "ats": "greenhouse",
-    "slug": "denalitherapeutics"
+    "ats": null
   },
   {
     "name": "Axsome Therapeutics",
@@ -624,8 +587,7 @@
   {
     "name": "Annexon",
     "careers_url": "https://boards.greenhouse.io/annexon",
-    "ats": "greenhouse",
-    "slug": "annexon"
+    "ats": null
   },
   {
     "name": "Praxis Precision Medicines",
@@ -636,30 +598,22 @@
   {
     "name": "Arcutis Biotherapeutics",
     "careers_url": "https://boards.greenhouse.io/arcutis",
-    "ats": "greenhouse",
-    "slug": "arcutis"
+    "ats": null
   },
   {
     "name": "Vera Therapeutics",
     "careers_url": "https://boards.greenhouse.io/veratherapeutics",
-    "ats": "greenhouse",
-    "slug": "veratherapeutics"
+    "ats": null
   },
   {
     "name": "Genmab",
     "careers_url": "https://genmab.wd3.myworkdayjobs.com/GenmabCareers",
-    "ats": "workday",
-    "tenant": "genmab",
-    "host": "wd3",
-    "site": "GenmabCareers"
+    "ats": null
   },
   {
     "name": "argenx",
     "careers_url": "https://argenx.wd3.myworkdayjobs.com/argenxcareers",
-    "ats": "workday",
-    "tenant": "argenx",
-    "host": "wd3",
-    "site": "argenxcareers"
+    "ats": null
   },
   {
     "name": "Ascendis Pharma",
@@ -712,10 +666,7 @@
   {
     "name": "ICON plc",
     "careers_url": "https://icon.wd3.myworkdayjobs.com/iconplc",
-    "ats": "workday",
-    "tenant": "icon",
-    "host": "wd3",
-    "site": "iconplc"
+    "ats": null
   },
   {
     "name": "Fortrea",
@@ -760,10 +711,7 @@
   {
     "name": "Thermo Fisher Scientific (incl. PPD)",
     "careers_url": "https://thermofisher.wd5.myworkdayjobs.com/thermofisher_career",
-    "ats": "workday",
-    "tenant": "thermofisher",
-    "host": "wd5",
-    "site": "thermofisher_career"
+    "ats": null
   },
   {
     "name": "Labcorp",
@@ -776,8 +724,7 @@
   {
     "name": "Veristat",
     "careers_url": "https://boards.greenhouse.io/veristat",
-    "ats": "greenhouse",
-    "slug": "veristat"
+    "ats": null
   },
   {
     "name": "BioAgilytix",
@@ -790,30 +737,22 @@
   {
     "name": "Worldwide Clinical Trials",
     "careers_url": "https://boards.greenhouse.io/worldwide",
-    "ats": "greenhouse",
-    "slug": "worldwide"
+    "ats": null
   },
   {
     "name": "Premier Research",
     "careers_url": "https://boards.greenhouse.io/premierresearch",
-    "ats": "greenhouse",
-    "slug": "premierresearch"
+    "ats": null
   },
   {
     "name": "Lonza",
     "careers_url": "https://lonza.wd3.myworkdayjobs.com/lonza_external_careers",
-    "ats": "workday",
-    "tenant": "lonza",
-    "host": "wd3",
-    "site": "lonza_external_careers"
+    "ats": null
   },
   {
     "name": "Catalent",
     "careers_url": "https://catalent.wd1.myworkdayjobs.com/Catalent_Careers",
-    "ats": "workday",
-    "tenant": "catalent",
-    "host": "wd1",
-    "site": "Catalent_Careers"
+    "ats": null
   },
   {
     "name": "Zoetis",
@@ -834,10 +773,7 @@
   {
     "name": "Organon",
     "careers_url": "https://organon.wd5.myworkdayjobs.com/OrganonCareers",
-    "ats": "workday",
-    "tenant": "organon",
-    "host": "wd5",
-    "site": "OrganonCareers"
+    "ats": null
   },
   {
     "name": "Viatris",

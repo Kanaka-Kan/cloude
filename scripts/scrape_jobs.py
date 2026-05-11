@@ -107,12 +107,15 @@ def fetch_greenhouse(cfg):
     out = []
     for j in data.get("jobs", []):
         loc = (j.get("location") or {}).get("name", "")
+        # Prefer first_published (true posting date) over updated_at (any edit bumps this).
+        first = j.get("first_published") or j.get("created_at")
+        updated = j.get("updated_at")
         out.append({
             "title": j.get("title", ""),
             "url": j.get("absolute_url", ""),
             "location": loc,
-            "posted_at": parse_iso(j.get("updated_at") or j.get("first_published")),
-            "posted_at_text": j.get("updated_at") or j.get("first_published") or "",
+            "posted_at": parse_iso(first or updated),
+            "posted_at_text": first or updated or "",
         })
     return out
 
@@ -193,53 +196,110 @@ def _workday_relative_date(text):
     return None
 
 
+def _workday_post(api, base, site, search_term, offset, limit=20):
+    payload = {
+        "appliedFacets": {},
+        "limit": limit,
+        "offset": offset,
+        "searchText": search_term,
+    }
+    return http_post_json(
+        api, payload,
+        headers={"Origin": base, "Referer": f"{base}/{site}"},
+    )
+
+
 def fetch_workday(cfg):
+    """Workday CXS API.
+
+    Strategy:
+      1. Try searchText="biostatistics" (and biometrics / stat programming).
+      2. If the tenant rejects searchText (e.g. HTTP 422), fall back to
+         empty searchText and paginate through all postings, filtering
+         client-side. Slower but works on stricter tenants.
+    """
     tenant = cfg["tenant"]
     site = cfg["site"]
     host = cfg.get("host", "wd1")
     base = f"https://{tenant}.{host}.myworkdayjobs.com"
     api = f"{base}/wday/cxs/{tenant}/{site}/jobs"
+
+    search_terms = ["biostatistics", "biometrics", "statistical programming"]
     out = []
-    # Use searchText to narrow at the API level — saves a lot of pagination.
-    # First request is allowed to raise; subsequent failures only break pagination.
+    seen_paths = set()
+
+    def record(j):
+        key = j.get("externalPath", "")
+        if not key or key in seen_paths:
+            return
+        seen_paths.add(key)
+        full_url = f"{base}{key}" if key.startswith("/") else f"{base}/{site}{key}"
+        posted_text = j.get("postedOn", "")
+        out.append({
+            "title": j.get("title", ""),
+            "url": full_url,
+            "location": j.get("locationsText", ""),
+            "posted_at": _workday_relative_date(posted_text),
+            "posted_at_text": posted_text,
+        })
+
+    # ── Attempt 1: per-term searchText ──────────────────────────────────────
+    fallback_to_empty = False
     first_request = True
-    for search_term in ("biostatistics", "biometrics", "statistical programming"):
+    for term in search_terms:
         offset = 0
-        seen = set()
         while True:
-            payload = {
-                "appliedFacets": {},
-                "limit": 20,
-                "offset": offset,
-                "searchText": search_term,
-            }
             try:
-                text = http_post_json(api, payload, headers={"Origin": base, "Referer": f"{base}/{site}"})
+                text = _workday_post(api, base, site, term, offset)
                 data = json.loads(text)
+            except urllib.error.HTTPError as e:
+                # If the very first request to this tenant 422s, the tenant
+                # likely rejects searchText. Fall back to empty-search pagination.
+                if first_request and e.code in (400, 422):
+                    fallback_to_empty = True
+                    break
+                if first_request:
+                    raise
+                break
             except Exception:
                 if first_request:
-                    raise  # let caller log the real error (404/403/etc.)
+                    raise
                 break
             first_request = False
             postings = data.get("jobPostings") or []
             if not postings:
                 break
             for j in postings:
-                key = j.get("externalPath", "")
-                if key in seen:
-                    continue
-                seen.add(key)
-                full_url = f"{base}{key}" if key.startswith("/") else f"{base}/{site}{key}"
-                posted_text = j.get("postedOn", "")
-                out.append({
-                    "title": j.get("title", ""),
-                    "url": full_url,
-                    "location": j.get("locationsText", ""),
-                    "posted_at": _workday_relative_date(posted_text),
-                    "posted_at_text": posted_text,
-                })
+                record(j)
             offset += len(postings)
             if len(postings) < 20 or offset > 200:
+                break
+        if fallback_to_empty:
+            break
+
+    # ── Attempt 2: empty searchText + client-side filter ────────────────────
+    if fallback_to_empty:
+        offset = 0
+        title_re = TITLE_KEYWORDS
+        while True:
+            try:
+                text = _workday_post(api, base, site, "", offset)
+                data = json.loads(text)
+            except urllib.error.HTTPError:
+                if offset == 0:
+                    raise
+                break
+            except Exception:
+                break
+            postings = data.get("jobPostings") or []
+            if not postings:
+                break
+            for j in postings:
+                # Only keep ones whose title looks biostat-ish — saves space.
+                if title_re.search(j.get("title", "")):
+                    record(j)
+            offset += len(postings)
+            if len(postings) < 20 or offset > 400:
                 break
     return out
 
@@ -254,9 +314,16 @@ ADAPTERS = {
 
 
 # ── Main scrape loop ─────────────────────────────────────────────────────────
-def scrape(companies, lookback_hours=LOOKBACK_HOURS):
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
-    rows = []
+def scrape(companies, lookback_hours_list=(24, 168)):
+    """Scrape once, then bucket matched jobs into multiple lookback windows.
+
+    Returns:
+        buckets: dict[int hours -> list of row dicts]
+        diagnostics: list[str]
+    """
+    now = datetime.now(timezone.utc)
+    cutoffs = {h: now - timedelta(hours=h) for h in lookback_hours_list}
+    buckets = {h: [] for h in lookback_hours_list}
     diagnostics = []
     for c in companies:
         name = c.get("name", "<unknown>")
@@ -275,33 +342,31 @@ def scrape(companies, lookback_hours=LOOKBACK_HOURS):
             continue
         elapsed = time.time() - t0
         n_total = len(jobs)
-        # filter by title
         title_hits = [j for j in jobs if title_matches(j["title"])]
-        # filter by recency: if posted_at is known, must be >= cutoff
-        # if posted_at is None (e.g. some Workday entries), keep it (will note)
-        recent = []
+        per_window = {h: [] for h in lookback_hours_list}
         for j in title_hits:
             pa = j.get("posted_at")
-            if pa is None:
-                recent.append(j)  # unknown date — keep, flagged
-            elif pa >= cutoff:
-                recent.append(j)
+            for h in lookback_hours_list:
+                if pa is None or pa >= cutoffs[h]:
+                    per_window[h].append(j)
         diagnostics.append(
             f"OK   {name} [{ats}]: scanned={n_total} title_hits={len(title_hits)} "
-            f"in_window={len(recent)} ({elapsed:.1f}s)"
+            + " ".join(f"in_{h}h={len(per_window[h])}" for h in lookback_hours_list)
+            + f" ({elapsed:.1f}s)"
         )
-        for j in recent:
-            rows.append({
-                "company": name,
-                "title": j["title"],
-                "location": j.get("location", ""),
-                "posted": j.get("posted_at_text", "") or (
-                    j["posted_at"].isoformat() if j.get("posted_at") else "unknown"
-                ),
-                "url": j["url"],
-                "ats": ats,
-            })
-    return rows, diagnostics
+        for h in lookback_hours_list:
+            for j in per_window[h]:
+                buckets[h].append({
+                    "company": name,
+                    "title": j["title"],
+                    "location": j.get("location", ""),
+                    "posted": j.get("posted_at_text", "") or (
+                        j["posted_at"].isoformat() if j.get("posted_at") else "unknown"
+                    ),
+                    "url": j["url"],
+                    "ats": ats,
+                })
+    return buckets, diagnostics
 
 
 def _needs_manual_check(diag_line):
@@ -327,19 +392,31 @@ def main():
     out_dir.mkdir(exist_ok=True)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    rows, diagnostics = scrape(companies)
+    # Default windows: 24h + 7d. Override via LOOKBACK_HOURS env (CSV).
+    env = os.environ.get("LOOKBACK_HOURS", "24,168")
+    lookback_list = tuple(int(x) for x in env.split(",") if x.strip())
+    buckets, diagnostics = scrape(companies, lookback_hours_list=lookback_list)
+    rows = buckets[lookback_list[0]]  # primary = first window (24h by default)
 
-    # ── Primary output: matched jobs ────────────────────────────────────────
+    # ── Primary output: matched jobs (multiple time windows) ────────────────
     headers = ["公司", "职位", "地点", "发布时间", "申请链接", "ATS"]
     widths = [32, 60, 36, 26, 70, 14]
-    table = [[r["company"], r["title"], r["location"], r["posted"], r["url"], r["ats"]] for r in rows]
 
-    daily_xlsx = out_dir / f"{today}.xlsx"
+    for h in lookback_list:
+        win_rows = buckets[h]
+        table = [[r["company"], r["title"], r["location"], r["posted"], r["url"], r["ats"]] for r in win_rows]
+        suffix = f"{h}h"
+        win_xlsx = out_dir / f"{today}-{suffix}.xlsx"
+        write_xlsx(str(win_xlsx), headers, table,
+                   sheet_name=f"{suffix} jobs {today}", widths=widths)
+
+    # latest.xlsx = the longest lookback (likely most useful single file)
+    longest = max(lookback_list)
+    table = [[r["company"], r["title"], r["location"], r["posted"], r["url"], r["ats"]] for r in buckets[longest]]
     latest_xlsx = out_dir / "latest.xlsx"
-    write_xlsx(str(daily_xlsx), headers, table,
-               sheet_name=f"Biostat jobs {today}", widths=widths)
     write_xlsx(str(latest_xlsx), headers, table,
-               sheet_name=f"Biostat jobs {today}", widths=widths)
+               sheet_name=f"{longest}h jobs {today}", widths=widths)
+    daily_xlsx = out_dir / f"{today}-{lookback_list[0]}h.xlsx"
 
     # ── Secondary output: manual-check fallback ─────────────────────────────
     # For every company that scraped 0 jobs or errored, emit pre-filtered
@@ -379,10 +456,10 @@ def main():
     diag_path = out_dir / f"diagnostics-{today}.txt"
     diag_path.write_text(
         f"Run: {datetime.now(timezone.utc).isoformat()}\n"
-        f"Lookback: {LOOKBACK_HOURS}h\n"
+        f"Lookback windows (h): {','.join(str(h) for h in lookback_list)}\n"
         f"Companies: {len(companies)}\n"
-        f"Matches: {len(rows)}\n"
-        f"Manual-check companies: {len(manual_rows)}\n\n"
+        + "".join(f"Matches in {h}h window: {len(buckets[h])}\n" for h in lookback_list)
+        + f"Manual-check companies: {len(manual_rows)}\n\n"
         + "\n".join(diagnostics) + "\n"
     )
 
@@ -390,28 +467,32 @@ def main():
     err_lines = [d for d in diagnostics if d.startswith("ERR ")]
     empty_lines = [d for d in diagnostics if d.startswith("OK") and "scanned=0" in d]
     print("=" * 70)
-    print(f"Biostat SM/AD scrape — {today}  (lookback {LOOKBACK_HOURS}h)")
+    print(f"Biostat SM/AD scrape — {today}  windows={list(lookback_list)}h")
     print(f"  Companies scanned : {len(companies)}")
-    print(f"  Jobs matched      : {len(rows)}")
+    for h in lookback_list:
+        print(f"  Jobs in {h}h window : {len(buckets[h])}")
     print(f"  HTTP errors       : {len(err_lines)}")
     print(f"  Empty (scanned=0) : {len(empty_lines)}")
     print(f"  Manual-check rows : {len(manual_rows)}")
     print("=" * 70)
-    if rows:
-        print("Matches:")
-        for r in rows:
-            print(f"  → {r['company']}: {r['title']}  [{r['location']}]")
-            print(f"     {r['url']}")
+    longest = max(lookback_list)
+    print(f"Matches in {longest}h window:")
+    for r in buckets[longest][:50]:
+        print(f"  → {r['company']}: {r['title']}  [{r['location']}]  ({r['posted']})")
+        print(f"     {r['url']}")
+    if len(buckets[longest]) > 50:
+        print(f"  ... and {len(buckets[longest])-50} more (see xlsx)")
     if err_lines:
         print("\nHTTP errors (fix slugs in scripts/companies.json):")
         for d in err_lines:
             print(f"  {d}")
     if empty_lines:
-        print(f"\nSilently empty (likely wrong Workday site name) — first 30 of {len(empty_lines)}:")
+        print(f"\nScanned=0 (likely wrong site name or 0 biostat openings) — first 30 of {len(empty_lines)}:")
         for d in empty_lines[:30]:
             print(f"  {d}")
     print("=" * 70)
-    print(f"Wrote {daily_xlsx} ({len(rows)} matches)")
+    print(f"Wrote {daily_xlsx}")
+    print(f"Wrote {latest_xlsx}")
     print(f"Wrote {manual_xlsx} ({len(manual_rows)} manual-check rows)")
     print(f"Wrote {diag_path}")
 
