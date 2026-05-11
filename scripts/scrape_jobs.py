@@ -32,15 +32,17 @@ LOOKBACK_HOURS = int(os.environ.get("LOOKBACK_HOURS", "24"))
 DEFAULT_UA = "daily-jobs-bot/1.0 (+github.com/Kanaka-Kan/cloude)"
 
 # ── Match rules ──────────────────────────────────────────────────────────────
+# Broad enough to catch the common job-title variants in this field:
+#   biostatistics, biostatistician, biometrics, statistical programming,
+#   statistical sciences, clinical statistics, statistician
 TITLE_KEYWORDS = re.compile(
-    r"\b(biostat|statistical\s+programm|statistician|stat\.?\s+programm)\b",
+    r"\b(biostat\w*|biometric\w*|statistic\w*|stat\.?\s+programm\w*)\b",
     re.IGNORECASE,
 )
 LEVEL_PATTERNS = [
     re.compile(r"\b(sr\.?|senior)\s+manager\b", re.IGNORECASE),
     re.compile(r"\bassoc(iate|\.)?\s+director\b", re.IGNORECASE),
     re.compile(r"\bassoc\.?\s+dir\b", re.IGNORECASE),
-    # Some companies use "AD" suffix
     re.compile(r"\bassociate\s+director\b", re.IGNORECASE),
 ]
 
@@ -199,7 +201,9 @@ def fetch_workday(cfg):
     api = f"{base}/wday/cxs/{tenant}/{site}/jobs"
     out = []
     # Use searchText to narrow at the API level — saves a lot of pagination.
-    for search_term in ("biostatistics", "statistical programming"):
+    # First request is allowed to raise; subsequent failures only break pagination.
+    first_request = True
+    for search_term in ("biostatistics", "biometrics", "statistical programming"):
         offset = 0
         seen = set()
         while True:
@@ -213,7 +217,10 @@ def fetch_workday(cfg):
                 text = http_post_json(api, payload, headers={"Origin": base, "Referer": f"{base}/{site}"})
                 data = json.loads(text)
             except Exception:
+                if first_request:
+                    raise  # let caller log the real error (404/403/etc.)
                 break
+            first_request = False
             postings = data.get("jobPostings") or []
             if not postings:
                 break
@@ -297,6 +304,23 @@ def scrape(companies, lookback_hours=LOOKBACK_HOURS):
     return rows, diagnostics
 
 
+def _needs_manual_check(diag_line):
+    return diag_line.startswith("ERR ") or diag_line.startswith("SKIP ") or "scanned=0" in diag_line
+
+
+def _build_search_urls(company_name):
+    """Build pre-filtered LinkedIn / Google / BioSpace search URLs for last-24h biostat SM/AD."""
+    q = urllib.parse.quote
+    li_kw = f'{company_name} biostatistics ("senior manager" OR "associate director")'
+    g_kw = f'site:linkedin.com/jobs {company_name} biostatistics ("senior manager" OR "associate director")'
+    bs_kw = f"{company_name} biostatistics"
+    return {
+        "linkedin": f"https://www.linkedin.com/jobs/search/?keywords={q(li_kw)}&f_TPR=r86400",
+        "google": f"https://www.google.com/search?q={q(g_kw)}&tbs=qdr:d",
+        "biospace": f"https://www.biospace.com/jobs/?keywords={q(bs_kw)}",
+    }
+
+
 def main():
     companies = json.loads((ROOT / "scripts" / "companies.json").read_text())
     out_dir = ROOT / "daily-jobs"
@@ -305,6 +329,7 @@ def main():
 
     rows, diagnostics = scrape(companies)
 
+    # ── Primary output: matched jobs ────────────────────────────────────────
     headers = ["公司", "职位", "地点", "发布时间", "申请链接", "ATS"]
     widths = [32, 60, 36, 26, 70, 14]
     table = [[r["company"], r["title"], r["location"], r["posted"], r["url"], r["ats"]] for r in rows]
@@ -316,16 +341,78 @@ def main():
     write_xlsx(str(latest_xlsx), headers, table,
                sheet_name=f"Biostat jobs {today}", widths=widths)
 
+    # ── Secondary output: manual-check fallback ─────────────────────────────
+    # For every company that scraped 0 jobs or errored, emit pre-filtered
+    # LinkedIn/Google/BioSpace search URLs so the user can still check by hand.
+    diag_by_company = {}
+    for line in diagnostics:
+        # lines look like "OK  Pfizer [workday]: scanned=42 ..." or "ERR Sarepta [greenhouse]: HTTP 404"
+        m = re.match(r"^\S+\s+(.+?)\s+\[", line)
+        if m:
+            diag_by_company[m.group(1)] = line
+
+    manual_rows = []
+    for c in companies:
+        diag = diag_by_company.get(c["name"], "")
+        if not diag or _needs_manual_check(diag):
+            status = diag.split(":", 1)[-1].strip() if ":" in diag else (diag or "no diagnostic")
+            urls = _build_search_urls(c["name"])
+            manual_rows.append([
+                c["name"],
+                status,
+                c.get("careers_url", ""),
+                urls["linkedin"],
+                urls["google"],
+                urls["biospace"],
+            ])
+
+    manual_xlsx = out_dir / f"manual-check-{today}.xlsx"
+    manual_latest = out_dir / "manual-check-latest.xlsx"
+    m_headers = ["公司", "抓取状态", "官方招聘页", "LinkedIn 24h 搜索", "Google 24h 搜索", "BioSpace 搜索"]
+    m_widths = [30, 50, 60, 70, 70, 60]
+    write_xlsx(str(manual_xlsx), m_headers, manual_rows,
+               sheet_name=f"Manual check {today}", widths=m_widths)
+    write_xlsx(str(manual_latest), m_headers, manual_rows,
+               sheet_name=f"Manual check {today}", widths=m_widths)
+
+    # ── Diagnostics file ────────────────────────────────────────────────────
     diag_path = out_dir / f"diagnostics-{today}.txt"
     diag_path.write_text(
         f"Run: {datetime.now(timezone.utc).isoformat()}\n"
         f"Lookback: {LOOKBACK_HOURS}h\n"
         f"Companies: {len(companies)}\n"
-        f"Matches: {len(rows)}\n\n"
+        f"Matches: {len(rows)}\n"
+        f"Manual-check companies: {len(manual_rows)}\n\n"
         + "\n".join(diagnostics) + "\n"
     )
 
+    # ── CI log summary (so you can read results without git pulling) ────────
+    err_lines = [d for d in diagnostics if d.startswith("ERR ")]
+    empty_lines = [d for d in diagnostics if d.startswith("OK") and "scanned=0" in d]
+    print("=" * 70)
+    print(f"Biostat SM/AD scrape — {today}  (lookback {LOOKBACK_HOURS}h)")
+    print(f"  Companies scanned : {len(companies)}")
+    print(f"  Jobs matched      : {len(rows)}")
+    print(f"  HTTP errors       : {len(err_lines)}")
+    print(f"  Empty (scanned=0) : {len(empty_lines)}")
+    print(f"  Manual-check rows : {len(manual_rows)}")
+    print("=" * 70)
+    if rows:
+        print("Matches:")
+        for r in rows:
+            print(f"  → {r['company']}: {r['title']}  [{r['location']}]")
+            print(f"     {r['url']}")
+    if err_lines:
+        print("\nHTTP errors (fix slugs in scripts/companies.json):")
+        for d in err_lines:
+            print(f"  {d}")
+    if empty_lines:
+        print(f"\nSilently empty (likely wrong Workday site name) — first 30 of {len(empty_lines)}:")
+        for d in empty_lines[:30]:
+            print(f"  {d}")
+    print("=" * 70)
     print(f"Wrote {daily_xlsx} ({len(rows)} matches)")
+    print(f"Wrote {manual_xlsx} ({len(manual_rows)} manual-check rows)")
     print(f"Wrote {diag_path}")
 
 
