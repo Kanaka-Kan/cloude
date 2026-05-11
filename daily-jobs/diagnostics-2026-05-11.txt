@@ -1,53 +1,54 @@
-Run: 2026-05-11T21:08:27.489963+00:00
+Run: 2026-05-11T21:24:25.570057+00:00
 Lookback: 24h
 Companies: 127
 Matches: 0
+Manual-check companies: 88
 
-OK   Pfizer [workday]: scanned=42 title_hits=0 in_window=0 (2.8s)
-OK   Merck & Co. [workday]: scanned=24 title_hits=0 in_window=0 (0.8s)
-OK   Johnson & Johnson [workday]: scanned=0 title_hits=0 in_window=0 (0.7s)
-OK   Eli Lilly [workday]: scanned=85 title_hits=0 in_window=0 (4.0s)
-OK   AbbVie [workday]: scanned=0 title_hits=0 in_window=0 (0.5s)
-OK   Bristol-Myers Squibb [workday]: scanned=0 title_hits=0 in_window=0 (0.6s)
-OK   Gilead Sciences [workday]: scanned=40 title_hits=0 in_window=0 (2.0s)
-OK   Amgen [workday]: scanned=158 title_hits=1 in_window=0 (6.1s)
-OK   Biogen [workday]: scanned=0 title_hits=0 in_window=0 (0.6s)
-OK   Regeneron Pharmaceuticals [workday]: scanned=0 title_hits=0 in_window=0 (0.4s)
-OK   Vertex Pharmaceuticals [workday]: scanned=0 title_hits=0 in_window=0 (0.6s)
-OK   Moderna [workday]: scanned=22 title_hits=0 in_window=0 (1.6s)
-OK   AstraZeneca [workday]: scanned=61 title_hits=0 in_window=0 (2.6s)
-OK   GSK [workday]: scanned=20 title_hits=0 in_window=0 (2.1s)
-OK   Novartis [workday]: scanned=106 title_hits=0 in_window=0 (5.4s)
-OK   Sanofi [workday]: scanned=67 title_hits=0 in_window=0 (15.6s)
-OK   Roche / Genentech [workday]: scanned=30 title_hits=0 in_window=0 (1.3s)
-OK   Bayer [workday]: scanned=0 title_hits=0 in_window=0 (0.8s)
-OK   Boehringer Ingelheim [workday]: scanned=0 title_hits=0 in_window=0 (0.8s)
-OK   Novo Nordisk [workday]: scanned=0 title_hits=0 in_window=0 (0.9s)
-OK   Takeda [workday]: scanned=0 title_hits=0 in_window=0 (1.2s)
-OK   Astellas Pharma [workday]: scanned=0 title_hits=0 in_window=0 (0.9s)
-OK   Daiichi Sankyo [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   Eisai [workday]: scanned=2 title_hits=0 in_window=0 (1.5s)
-OK   Otsuka Pharmaceutical [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   Incyte [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   BioMarin Pharmaceutical [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   Alnylam Pharmaceuticals [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   Ionis Pharmaceuticals [workday]: scanned=0 title_hits=0 in_window=0 (0.7s)
+OK   Pfizer [workday]: scanned=42 title_hits=0 in_window=0 (4.1s)
+OK   Merck & Co. [workday]: scanned=24 title_hits=0 in_window=0 (1.0s)
+ERR  Johnson & Johnson [workday]: HTTP 422 Unprocessable Entity
+OK   Eli Lilly [workday]: scanned=85 title_hits=0 in_window=0 (4.4s)
+ERR  AbbVie [workday]: HTTP 401 Unauthorized
+ERR  Bristol-Myers Squibb [workday]: HTTP 422 Unprocessable Entity
+OK   Gilead Sciences [workday]: scanned=44 title_hits=12 in_window=0 (3.0s)
+OK   Amgen [workday]: scanned=158 title_hits=14 in_window=0 (7.6s)
+ERR  Biogen [workday]: HTTP 422 Unprocessable Entity
+ERR  Regeneron Pharmaceuticals [workday]: HTTP 422 Unprocessable Entity
+ERR  Vertex Pharmaceuticals [workday]: HTTP 422 Unprocessable Entity
+OK   Moderna [workday]: scanned=23 title_hits=0 in_window=0 (2.2s)
+OK   AstraZeneca [workday]: scanned=81 title_hits=9 in_window=0 (5.2s)
+OK   GSK [workday]: scanned=20 title_hits=2 in_window=0 (2.5s)
+OK   Novartis [workday]: scanned=106 title_hits=4 in_window=0 (7.5s)
+OK   Sanofi [workday]: scanned=67 title_hits=3 in_window=0 (19.5s)
+OK   Roche / Genentech [workday]: scanned=41 title_hits=0 in_window=0 (2.4s)
+ERR  Bayer [workday]: HTTP 422 Unprocessable Entity
+ERR  Boehringer Ingelheim [workday]: HTTP 422 Unprocessable Entity
+ERR  Novo Nordisk [workday]: HTTP 422 Unprocessable Entity
+ERR  Takeda [workday]: HTTP 404 Not Found
+ERR  Astellas Pharma [workday]: HTTP 422 Unprocessable Entity
+ERR  Daiichi Sankyo [workday]: HTTP 422 Unprocessable Entity
+OK   Eisai [workday]: scanned=2 title_hits=2 in_window=0 (1.7s)
+ERR  Otsuka Pharmaceutical [workday]: HTTP 422 Unprocessable Entity
+ERR  Incyte [workday]: HTTP 422 Unprocessable Entity
+ERR  BioMarin Pharmaceutical [workday]: HTTP 422 Unprocessable Entity
+ERR  Alnylam Pharmaceuticals [workday]: HTTP 422 Unprocessable Entity
+ERR  Ionis Pharmaceuticals [workday]: HTTP 422 Unprocessable Entity
 ERR  Sarepta Therapeutics [greenhouse]: HTTP 404 Not Found
-OK   Neurocrine Biosciences [workday]: scanned=0 title_hits=0 in_window=0 (0.6s)
-OK   Jazz Pharmaceuticals [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   Exelixis [workday]: scanned=0 title_hits=0 in_window=0 (0.6s)
-OK   Iovance Biotherapeutics [greenhouse]: scanned=30 title_hits=0 in_window=0 (0.1s)
+ERR  Neurocrine Biosciences [workday]: HTTP 404 Not Found
+ERR  Jazz Pharmaceuticals [workday]: HTTP 422 Unprocessable Entity
+ERR  Exelixis [workday]: HTTP 422 Unprocessable Entity
+OK   Iovance Biotherapeutics [greenhouse]: scanned=30 title_hits=0 in_window=0 (0.2s)
 ERR  Apellis Pharmaceuticals [greenhouse]: HTTP 404 Not Found
 ERR  Madrigal Pharmaceuticals [greenhouse]: HTTP 404 Not Found
-OK   Acadia Pharmaceuticals [workday]: scanned=0 title_hits=0 in_window=0 (0.5s)
-OK   Insmed [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   United Therapeutics [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
+ERR  Acadia Pharmaceuticals [workday]: HTTP 422 Unprocessable Entity
+ERR  Insmed [workday]: HTTP 422 Unprocessable Entity
+ERR  United Therapeutics [workday]: HTTP 422 Unprocessable Entity
 ERR  Halozyme Therapeutics [greenhouse]: HTTP 404 Not Found
-OK   Beam Therapeutics [greenhouse]: scanned=26 title_hits=0 in_window=0 (0.2s)
+OK   Beam Therapeutics [greenhouse]: scanned=26 title_hits=2 in_window=0 (0.1s)
 ERR  Intellia Therapeutics [greenhouse]: HTTP 404 Not Found
 ERR  Editas Medicine [greenhouse]: HTTP 404 Not Found
 ERR  Verve Therapeutics [greenhouse]: HTTP 404 Not Found
-OK   Prime Medicine [greenhouse]: scanned=9 title_hits=0 in_window=0 (3.7s)
+OK   Prime Medicine [greenhouse]: scanned=9 title_hits=0 in_window=0 (0.1s)
 OK   Recursion Pharmaceuticals [greenhouse]: scanned=32 title_hits=0 in_window=0 (0.1s)
 ERR  Schrödinger [greenhouse]: HTTP 404 Not Found
 OK   Relay Therapeutics [greenhouse]: scanned=7 title_hits=0 in_window=0 (0.1s)
@@ -55,18 +56,18 @@ ERR  Insitro [greenhouse]: HTTP 404 Not Found
 ERR  Adaptive Biotechnologies [greenhouse]: HTTP 404 Not Found
 ERR  Tempus AI [greenhouse]: HTTP 404 Not Found
 ERR  10x Genomics [lever]: HTTP 404 Not Found
-OK   Illumina [workday]: scanned=20 title_hits=0 in_window=0 (10.4s)
-OK   Natera [greenhouse]: scanned=169 title_hits=0 in_window=0 (0.2s)
+OK   Illumina [workday]: scanned=20 title_hits=0 in_window=0 (14.0s)
+OK   Natera [greenhouse]: scanned=169 title_hits=2 in_window=0 (0.3s)
 ERR  Guardant Health [greenhouse]: HTTP 404 Not Found
-OK   Exact Sciences [workday]: scanned=0 title_hits=0 in_window=0 (0.6s)
-OK   BridgeBio Pharma [greenhouse]: scanned=87 title_hits=0 in_window=0 (0.2s)
-OK   Revolution Medicines [greenhouse]: scanned=208 title_hits=0 in_window=0 (0.2s)
+ERR  Exact Sciences [workday]: HTTP 422 Unprocessable Entity
+OK   BridgeBio Pharma [greenhouse]: scanned=87 title_hits=0 in_window=0 (0.3s)
+OK   Revolution Medicines [greenhouse]: scanned=208 title_hits=1 in_window=0 (0.2s)
 ERR  Arcus Biosciences [greenhouse]: HTTP 404 Not Found
 OK   Arvinas [greenhouse]: scanned=8 title_hits=0 in_window=0 (0.1s)
 OK   Kymera Therapeutics [greenhouse]: scanned=23 title_hits=0 in_window=0 (0.1s)
 ERR  C4 Therapeutics [greenhouse]: HTTP 404 Not Found
 OK   Blueprint Medicines [greenhouse]: scanned=10 title_hits=0 in_window=0 (0.1s)
-OK   Nuvalent [greenhouse]: scanned=16 title_hits=0 in_window=0 (0.1s)
+OK   Nuvalent [greenhouse]: scanned=16 title_hits=1 in_window=0 (0.1s)
 ERR  Avidity Biosciences [greenhouse]: HTTP 404 Not Found
 OK   Cytokinetics [greenhouse]: scanned=12 title_hits=0 in_window=0 (0.1s)
 OK   Akero Therapeutics [greenhouse]: scanned=3 title_hits=0 in_window=0 (0.1s)
@@ -86,47 +87,47 @@ ERR  Sana Biotechnology [greenhouse]: HTTP 404 Not Found
 OK   Lyell Immunopharma [greenhouse]: scanned=6 title_hits=0 in_window=0 (0.1s)
 ERR  Rocket Pharmaceuticals [greenhouse]: HTTP 404 Not Found
 ERR  Ultragenyx Pharmaceutical [greenhouse]: HTTP 404 Not Found
-OK   Generation Bio [greenhouse]: scanned=0 title_hits=0 in_window=0 (8.0s)
+OK   Generation Bio [greenhouse]: scanned=0 title_hits=0 in_window=0 (0.1s)
 OK   Voyager Therapeutics [greenhouse]: scanned=0 title_hits=0 in_window=0 (0.1s)
 ERR  Wave Life Sciences [greenhouse]: HTTP 404 Not Found
-OK   Stoke Therapeutics [greenhouse]: scanned=17 title_hits=0 in_window=0 (0.2s)
-OK   Arrowhead Pharmaceuticals [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
+OK   Stoke Therapeutics [greenhouse]: scanned=17 title_hits=1 in_window=0 (0.1s)
+ERR  Arrowhead Pharmaceuticals [workday]: HTTP 422 Unprocessable Entity
 ERR  Vir Biotechnology [greenhouse]: HTTP 404 Not Found
 ERR  Denali Therapeutics [greenhouse]: HTTP 404 Not Found
-OK   Axsome Therapeutics [greenhouse]: scanned=202 title_hits=0 in_window=0 (0.2s)
+OK   Axsome Therapeutics [greenhouse]: scanned=202 title_hits=0 in_window=0 (0.4s)
 ERR  Annexon [greenhouse]: HTTP 404 Not Found
 OK   Praxis Precision Medicines [greenhouse]: scanned=24 title_hits=0 in_window=0 (0.1s)
 ERR  Arcutis Biotherapeutics [greenhouse]: HTTP 404 Not Found
 ERR  Vera Therapeutics [greenhouse]: HTTP 404 Not Found
-OK   Genmab [workday]: scanned=0 title_hits=0 in_window=0 (0.9s)
-OK   argenx [workday]: scanned=0 title_hits=0 in_window=0 (0.9s)
-OK   Ascendis Pharma [workday]: scanned=0 title_hits=0 in_window=0 (0.6s)
-OK   BeOne Medicines (BeiGene) [workday]: scanned=0 title_hits=0 in_window=0 (2.2s)
-OK   Teva Pharmaceuticals [workday]: scanned=0 title_hits=0 in_window=0 (0.8s)
-OK   Alkermes [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   Supernus Pharmaceuticals [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   IQVIA [workday]: scanned=102 title_hits=0 in_window=0 (5.2s)
-OK   ICON plc [workday]: scanned=0 title_hits=0 in_window=0 (1.1s)
-OK   Fortrea [workday]: scanned=25 title_hits=0 in_window=0 (1.2s)
-OK   Charles River Laboratories [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   Medpace [workday]: scanned=0 title_hits=0 in_window=0 (0.6s)
-OK   Parexel [workday]: scanned=0 title_hits=0 in_window=0 (0.9s)
-OK   Syneos Health [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   Thermo Fisher Scientific (incl. PPD) [workday]: scanned=0 title_hits=0 in_window=0 (0.7s)
-OK   Labcorp [workday]: scanned=0 title_hits=0 in_window=0 (0.7s)
+ERR  Genmab [workday]: HTTP 404 Not Found
+ERR  argenx [workday]: HTTP 404 Not Found
+ERR  Ascendis Pharma [workday]: HTTP 422 Unprocessable Entity
+ERR  BeOne Medicines (BeiGene) [workday]: HTTP 422 Unprocessable Entity
+ERR  Teva Pharmaceuticals [workday]: HTTP 422 Unprocessable Entity
+ERR  Alkermes [workday]: HTTP 422 Unprocessable Entity
+ERR  Supernus Pharmaceuticals [workday]: HTTP 422 Unprocessable Entity
+OK   IQVIA [workday]: scanned=103 title_hits=2 in_window=0 (7.7s)
+ERR  ICON plc [workday]: HTTP 404 Not Found
+OK   Fortrea [workday]: scanned=51 title_hits=0 in_window=0 (2.9s)
+ERR  Charles River Laboratories [workday]: HTTP 422 Unprocessable Entity
+ERR  Medpace [workday]: HTTP 422 Unprocessable Entity
+ERR  Parexel [workday]: HTTP 422 Unprocessable Entity
+ERR  Syneos Health [workday]: HTTP 422 Unprocessable Entity
+ERR  Thermo Fisher Scientific (incl. PPD) [workday]: HTTP 404 Not Found
+OK   Labcorp [workday]: scanned=1 title_hits=0 in_window=0 (1.3s)
 ERR  Veristat [greenhouse]: HTTP 404 Not Found
-OK   BioAgilytix [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
+ERR  BioAgilytix [workday]: HTTP 422 Unprocessable Entity
 ERR  Worldwide Clinical Trials [greenhouse]: HTTP 404 Not Found
 ERR  Premier Research [greenhouse]: HTTP 404 Not Found
-OK   Lonza [workday]: scanned=0 title_hits=0 in_window=0 (0.9s)
-OK   Catalent [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
+ERR  Lonza [workday]: HTTP 404 Not Found
+ERR  Catalent [workday]: HTTP 404 Not Found
 OK   Zoetis [workday]: scanned=6 title_hits=0 in_window=0 (0.9s)
-OK   Elanco Animal Health [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   Organon [workday]: scanned=0 title_hits=0 in_window=0 (0.7s)
-OK   Viatris [workday]: scanned=4 title_hits=0 in_window=0 (1.4s)
-OK   EMD Serono (Merck KGaA) [workday]: scanned=0 title_hits=0 in_window=0 (0.9s)
-OK   CSL Behring [workday]: scanned=24 title_hits=0 in_window=0 (1.8s)
-OK   UCB [workday]: scanned=0 title_hits=0 in_window=0 (0.8s)
-OK   Sumitomo Pharma America [workday]: scanned=0 title_hits=0 in_window=0 (0.3s)
-OK   Lundbeck [workday]: scanned=0 title_hits=0 in_window=0 (0.9s)
-OK   Ipsen [workday]: scanned=0 title_hits=0 in_window=0 (0.8s)
+ERR  Elanco Animal Health [workday]: HTTP 422 Unprocessable Entity
+ERR  Organon [workday]: HTTP 404 Not Found
+OK   Viatris [workday]: scanned=4 title_hits=0 in_window=0 (1.9s)
+ERR  EMD Serono (Merck KGaA) [workday]: HTTP 422 Unprocessable Entity
+OK   CSL Behring [workday]: scanned=26 title_hits=8 in_window=0 (3.0s)
+ERR  UCB [workday]: HTTP 422 Unprocessable Entity
+ERR  Sumitomo Pharma America [workday]: HTTP 422 Unprocessable Entity
+ERR  Lundbeck [workday]: HTTP 422 Unprocessable Entity
+ERR  Ipsen [workday]: HTTP 422 Unprocessable Entity
