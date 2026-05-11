@@ -1,0 +1,42 @@
+name: Daily biostat job scrape
+
+on:
+  schedule:
+    # Runs at 13:00 UTC (= 09:00 ET / 06:00 PT) every day
+    - cron: "0 13 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run scraper
+        env:
+          LOOKBACK_HOURS: "24"
+        run: |
+          python scripts/scrape_jobs.py
+
+      - name: Commit & push results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add daily-jobs/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          DATE=$(date -u +%Y-%m-%d)
+          git commit -m "daily-jobs: biostat SM/AD scrape for ${DATE}"
+          git push

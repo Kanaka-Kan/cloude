@@ -1,0 +1,898 @@
+[
+  {
+    "name": "Pfizer",
+    "careers_url": "https://pfizer.wd1.myworkdayjobs.com/PfizerCareers",
+    "ats": "workday",
+    "tenant": "pfizer",
+    "host": "wd1",
+    "site": "PfizerCareers"
+  },
+  {
+    "name": "Merck & Co.",
+    "careers_url": "https://msd.wd5.myworkdayjobs.com/SearchJobs",
+    "ats": "workday",
+    "tenant": "msd",
+    "host": "wd5",
+    "site": "SearchJobs"
+  },
+  {
+    "name": "Johnson & Johnson",
+    "careers_url": "https://jnjc.wd5.myworkdayjobs.com/jnjcareers",
+    "ats": "workday",
+    "tenant": "jnjc",
+    "host": "wd5",
+    "site": "jnjcareers"
+  },
+  {
+    "name": "Eli Lilly",
+    "careers_url": "https://lilly.wd5.myworkdayjobs.com/LLY",
+    "ats": "workday",
+    "tenant": "lilly",
+    "host": "wd5",
+    "site": "LLY"
+  },
+  {
+    "name": "AbbVie",
+    "careers_url": "https://abbvie.wd5.myworkdayjobs.com/External",
+    "ats": "workday",
+    "tenant": "abbvie",
+    "host": "wd5",
+    "site": "External"
+  },
+  {
+    "name": "Bristol-Myers Squibb",
+    "careers_url": "https://bms.wd5.myworkdayjobs.com/BMS",
+    "ats": "workday",
+    "tenant": "bms",
+    "host": "wd5",
+    "site": "BMS"
+  },
+  {
+    "name": "Gilead Sciences",
+    "careers_url": "https://gilead.wd1.myworkdayjobs.com/gileadcareers",
+    "ats": "workday",
+    "tenant": "gilead",
+    "host": "wd1",
+    "site": "gileadcareers"
+  },
+  {
+    "name": "Amgen",
+    "careers_url": "https://amgen.wd1.myworkdayjobs.com/Careers",
+    "ats": "workday",
+    "tenant": "amgen",
+    "host": "wd1",
+    "site": "Careers"
+  },
+  {
+    "name": "Biogen",
+    "careers_url": "https://biogen.wd5.myworkdayjobs.com/External",
+    "ats": "workday",
+    "tenant": "biogen",
+    "host": "wd5",
+    "site": "External"
+  },
+  {
+    "name": "Regeneron Pharmaceuticals",
+    "careers_url": "https://regeneron.wd5.myworkdayjobs.com/Regeneron_Careers",
+    "ats": "workday",
+    "tenant": "regeneron",
+    "host": "wd5",
+    "site": "Regeneron_Careers"
+  },
+  {
+    "name": "Vertex Pharmaceuticals",
+    "careers_url": "https://vrtx.wd5.myworkdayjobs.com/vertex_careers",
+    "ats": "workday",
+    "tenant": "vrtx",
+    "host": "wd5",
+    "site": "vertex_careers"
+  },
+  {
+    "name": "Moderna",
+    "careers_url": "https://modernatx.wd1.myworkdayjobs.com/M_tx",
+    "ats": "workday",
+    "tenant": "modernatx",
+    "host": "wd1",
+    "site": "M_tx"
+  },
+  {
+    "name": "AstraZeneca",
+    "careers_url": "https://astrazeneca.wd3.myworkdayjobs.com/Careers",
+    "ats": "workday",
+    "tenant": "astrazeneca",
+    "host": "wd3",
+    "site": "Careers"
+  },
+  {
+    "name": "GSK",
+    "careers_url": "https://gsk.wd5.myworkdayjobs.com/GSKcareers",
+    "ats": "workday",
+    "tenant": "gsk",
+    "host": "wd5",
+    "site": "GSKcareers"
+  },
+  {
+    "name": "Novartis",
+    "careers_url": "https://novartis.wd3.myworkdayjobs.com/Novartis_Careers",
+    "ats": "workday",
+    "tenant": "novartis",
+    "host": "wd3",
+    "site": "Novartis_Careers"
+  },
+  {
+    "name": "Sanofi",
+    "careers_url": "https://sanofi.wd3.myworkdayjobs.com/SanofiCareers",
+    "ats": "workday",
+    "tenant": "sanofi",
+    "host": "wd3",
+    "site": "SanofiCareers"
+  },
+  {
+    "name": "Roche / Genentech",
+    "careers_url": "https://roche.wd3.myworkdayjobs.com/roche-ext",
+    "ats": "workday",
+    "tenant": "roche",
+    "host": "wd3",
+    "site": "roche-ext"
+  },
+  {
+    "name": "Bayer",
+    "careers_url": "https://bayer.wd3.myworkdayjobs.com/CAREERS",
+    "ats": "workday",
+    "tenant": "bayer",
+    "host": "wd3",
+    "site": "CAREERS"
+  },
+  {
+    "name": "Boehringer Ingelheim",
+    "careers_url": "https://boehringer.wd3.myworkdayjobs.com/Boehringer-Ingelheim-Careers",
+    "ats": "workday",
+    "tenant": "boehringer",
+    "host": "wd3",
+    "site": "Boehringer-Ingelheim-Careers"
+  },
+  {
+    "name": "Novo Nordisk",
+    "careers_url": "https://novonordisk.wd3.myworkdayjobs.com/novonordisk-COM-Careers",
+    "ats": "workday",
+    "tenant": "novonordisk",
+    "host": "wd3",
+    "site": "novonordisk-COM-Careers"
+  },
+  {
+    "name": "Takeda",
+    "careers_url": "https://takeda.wd3.myworkdayjobs.com/takedajobs",
+    "ats": "workday",
+    "tenant": "takeda",
+    "host": "wd3",
+    "site": "takedajobs"
+  },
+  {
+    "name": "Astellas Pharma",
+    "careers_url": "https://astellas.wd3.myworkdayjobs.com/Astellas_Careers",
+    "ats": "workday",
+    "tenant": "astellas",
+    "host": "wd3",
+    "site": "Astellas_Careers"
+  },
+  {
+    "name": "Daiichi Sankyo",
+    "careers_url": "https://dsi.wd1.myworkdayjobs.com/DSI",
+    "ats": "workday",
+    "tenant": "dsi",
+    "host": "wd1",
+    "site": "DSI"
+  },
+  {
+    "name": "Eisai",
+    "careers_url": "https://eisai.wd5.myworkdayjobs.com/Eisai",
+    "ats": "workday",
+    "tenant": "eisai",
+    "host": "wd5",
+    "site": "Eisai"
+  },
+  {
+    "name": "Otsuka Pharmaceutical",
+    "careers_url": "https://otsuka.wd1.myworkdayjobs.com/External",
+    "ats": "workday",
+    "tenant": "otsuka",
+    "host": "wd1",
+    "site": "External"
+  },
+  {
+    "name": "Incyte",
+    "careers_url": "https://incyte.wd1.myworkdayjobs.com/IncyteCareers",
+    "ats": "workday",
+    "tenant": "incyte",
+    "host": "wd1",
+    "site": "IncyteCareers"
+  },
+  {
+    "name": "BioMarin Pharmaceutical",
+    "careers_url": "https://biomarin.wd1.myworkdayjobs.com/BioMarin_External",
+    "ats": "workday",
+    "tenant": "biomarin",
+    "host": "wd1",
+    "site": "BioMarin_External"
+  },
+  {
+    "name": "Alnylam Pharmaceuticals",
+    "careers_url": "https://alnylam.wd1.myworkdayjobs.com/AlnylamCareers",
+    "ats": "workday",
+    "tenant": "alnylam",
+    "host": "wd1",
+    "site": "AlnylamCareers"
+  },
+  {
+    "name": "Ionis Pharmaceuticals",
+    "careers_url": "https://ionispharma.wd5.myworkdayjobs.com/IonisCareers",
+    "ats": "workday",
+    "tenant": "ionispharma",
+    "host": "wd5",
+    "site": "IonisCareers"
+  },
+  {
+    "name": "Sarepta Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/sareptatherapeutics",
+    "ats": "greenhouse",
+    "slug": "sareptatherapeutics"
+  },
+  {
+    "name": "Neurocrine Biosciences",
+    "careers_url": "https://neurocrine.wd5.myworkdayjobs.com/Careers",
+    "ats": "workday",
+    "tenant": "neurocrine",
+    "host": "wd5",
+    "site": "Careers"
+  },
+  {
+    "name": "Jazz Pharmaceuticals",
+    "careers_url": "https://jazzpharma.wd1.myworkdayjobs.com/Jazz_External",
+    "ats": "workday",
+    "tenant": "jazzpharma",
+    "host": "wd1",
+    "site": "Jazz_External"
+  },
+  {
+    "name": "Exelixis",
+    "careers_url": "https://exelixis.wd5.myworkdayjobs.com/Exelixis",
+    "ats": "workday",
+    "tenant": "exelixis",
+    "host": "wd5",
+    "site": "Exelixis"
+  },
+  {
+    "name": "Iovance Biotherapeutics",
+    "careers_url": "https://boards.greenhouse.io/iovancebiotherapeutics",
+    "ats": "greenhouse",
+    "slug": "iovancebiotherapeutics"
+  },
+  {
+    "name": "Apellis Pharmaceuticals",
+    "careers_url": "https://boards.greenhouse.io/apellispharmaceuticals",
+    "ats": "greenhouse",
+    "slug": "apellispharmaceuticals"
+  },
+  {
+    "name": "Madrigal Pharmaceuticals",
+    "careers_url": "https://boards.greenhouse.io/madrigalpharmaceuticals",
+    "ats": "greenhouse",
+    "slug": "madrigalpharmaceuticals"
+  },
+  {
+    "name": "Acadia Pharmaceuticals",
+    "careers_url": "https://acadia.wd5.myworkdayjobs.com/Acadia",
+    "ats": "workday",
+    "tenant": "acadia",
+    "host": "wd5",
+    "site": "Acadia"
+  },
+  {
+    "name": "Insmed",
+    "careers_url": "https://insmed.wd1.myworkdayjobs.com/Insmed",
+    "ats": "workday",
+    "tenant": "insmed",
+    "host": "wd1",
+    "site": "Insmed"
+  },
+  {
+    "name": "United Therapeutics",
+    "careers_url": "https://unither.wd1.myworkdayjobs.com/UT_Careers",
+    "ats": "workday",
+    "tenant": "unither",
+    "host": "wd1",
+    "site": "UT_Careers"
+  },
+  {
+    "name": "Halozyme Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/halozyme",
+    "ats": "greenhouse",
+    "slug": "halozyme"
+  },
+  {
+    "name": "Beam Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/beamtherapeutics",
+    "ats": "greenhouse",
+    "slug": "beamtherapeutics"
+  },
+  {
+    "name": "Intellia Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/intelliatherapeutics",
+    "ats": "greenhouse",
+    "slug": "intelliatherapeutics"
+  },
+  {
+    "name": "Editas Medicine",
+    "careers_url": "https://boards.greenhouse.io/editasmedicine",
+    "ats": "greenhouse",
+    "slug": "editasmedicine"
+  },
+  {
+    "name": "Verve Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/vervetherapeutics",
+    "ats": "greenhouse",
+    "slug": "vervetherapeutics"
+  },
+  {
+    "name": "Prime Medicine",
+    "careers_url": "https://boards.greenhouse.io/primemedicine",
+    "ats": "greenhouse",
+    "slug": "primemedicine"
+  },
+  {
+    "name": "Recursion Pharmaceuticals",
+    "careers_url": "https://boards.greenhouse.io/recursionpharmaceuticals",
+    "ats": "greenhouse",
+    "slug": "recursionpharmaceuticals"
+  },
+  {
+    "name": "Schrödinger",
+    "careers_url": "https://boards.greenhouse.io/schrodinger",
+    "ats": "greenhouse",
+    "slug": "schrodinger"
+  },
+  {
+    "name": "Relay Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/relaytherapeutics",
+    "ats": "greenhouse",
+    "slug": "relaytherapeutics"
+  },
+  {
+    "name": "Insitro",
+    "careers_url": "https://boards.greenhouse.io/insitro",
+    "ats": "greenhouse",
+    "slug": "insitro"
+  },
+  {
+    "name": "Adaptive Biotechnologies",
+    "careers_url": "https://boards.greenhouse.io/adaptivebiotech",
+    "ats": "greenhouse",
+    "slug": "adaptivebiotech"
+  },
+  {
+    "name": "Tempus AI",
+    "careers_url": "https://boards.greenhouse.io/tempus",
+    "ats": "greenhouse",
+    "slug": "tempus"
+  },
+  {
+    "name": "10x Genomics",
+    "careers_url": "https://jobs.lever.co/10xgenomics",
+    "ats": "lever",
+    "slug": "10xgenomics"
+  },
+  {
+    "name": "Illumina",
+    "careers_url": "https://illumina.wd1.myworkdayjobs.com/illumina-careers",
+    "ats": "workday",
+    "tenant": "illumina",
+    "host": "wd1",
+    "site": "illumina-careers"
+  },
+  {
+    "name": "Natera",
+    "careers_url": "https://boards.greenhouse.io/natera",
+    "ats": "greenhouse",
+    "slug": "natera"
+  },
+  {
+    "name": "Guardant Health",
+    "careers_url": "https://boards.greenhouse.io/guardanthealth",
+    "ats": "greenhouse",
+    "slug": "guardanthealth"
+  },
+  {
+    "name": "Exact Sciences",
+    "careers_url": "https://exactsciences.wd5.myworkdayjobs.com/Exact_Sciences_Careers",
+    "ats": "workday",
+    "tenant": "exactsciences",
+    "host": "wd5",
+    "site": "Exact_Sciences_Careers"
+  },
+  {
+    "name": "BridgeBio Pharma",
+    "careers_url": "https://boards.greenhouse.io/bridgebio",
+    "ats": "greenhouse",
+    "slug": "bridgebio"
+  },
+  {
+    "name": "Revolution Medicines",
+    "careers_url": "https://boards.greenhouse.io/revolutionmedicines",
+    "ats": "greenhouse",
+    "slug": "revolutionmedicines"
+  },
+  {
+    "name": "Arcus Biosciences",
+    "careers_url": "https://boards.greenhouse.io/arcusbiosciences",
+    "ats": "greenhouse",
+    "slug": "arcusbiosciences"
+  },
+  {
+    "name": "Arvinas",
+    "careers_url": "https://boards.greenhouse.io/arvinas",
+    "ats": "greenhouse",
+    "slug": "arvinas"
+  },
+  {
+    "name": "Kymera Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/kymeratherapeutics",
+    "ats": "greenhouse",
+    "slug": "kymeratherapeutics"
+  },
+  {
+    "name": "C4 Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/c4therapeutics",
+    "ats": "greenhouse",
+    "slug": "c4therapeutics"
+  },
+  {
+    "name": "Blueprint Medicines",
+    "careers_url": "https://boards.greenhouse.io/blueprintmedicines",
+    "ats": "greenhouse",
+    "slug": "blueprintmedicines"
+  },
+  {
+    "name": "Nuvalent",
+    "careers_url": "https://boards.greenhouse.io/nuvalent",
+    "ats": "greenhouse",
+    "slug": "nuvalent"
+  },
+  {
+    "name": "Avidity Biosciences",
+    "careers_url": "https://boards.greenhouse.io/aviditybiosciences",
+    "ats": "greenhouse",
+    "slug": "aviditybiosciences"
+  },
+  {
+    "name": "Cytokinetics",
+    "careers_url": "https://boards.greenhouse.io/cytokinetics",
+    "ats": "greenhouse",
+    "slug": "cytokinetics"
+  },
+  {
+    "name": "Akero Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/akerotherapeutics",
+    "ats": "greenhouse",
+    "slug": "akerotherapeutics"
+  },
+  {
+    "name": "Viking Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/vikingtherapeutics",
+    "ats": "greenhouse",
+    "slug": "vikingtherapeutics"
+  },
+  {
+    "name": "89bio",
+    "careers_url": "https://boards.greenhouse.io/89bio",
+    "ats": "greenhouse",
+    "slug": "89bio"
+  },
+  {
+    "name": "Structure Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/structuretherapeutics",
+    "ats": "greenhouse",
+    "slug": "structuretherapeutics"
+  },
+  {
+    "name": "Replimune",
+    "careers_url": "https://boards.greenhouse.io/replimune",
+    "ats": "greenhouse",
+    "slug": "replimune"
+  },
+  {
+    "name": "Krystal Biotech",
+    "careers_url": "https://boards.greenhouse.io/krystalbiotech",
+    "ats": "greenhouse",
+    "slug": "krystalbiotech"
+  },
+  {
+    "name": "PTC Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/ptcbio",
+    "ats": "greenhouse",
+    "slug": "ptcbio"
+  },
+  {
+    "name": "Travere Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/traveretherapeutics",
+    "ats": "greenhouse",
+    "slug": "traveretherapeutics"
+  },
+  {
+    "name": "Mirum Pharmaceuticals",
+    "careers_url": "https://boards.greenhouse.io/mirumpharmaceuticals",
+    "ats": "greenhouse",
+    "slug": "mirumpharmaceuticals"
+  },
+  {
+    "name": "Disc Medicine",
+    "careers_url": "https://boards.greenhouse.io/discmedicine",
+    "ats": "greenhouse",
+    "slug": "discmedicine"
+  },
+  {
+    "name": "Caribou Biosciences",
+    "careers_url": "https://boards.greenhouse.io/cariboubiosciences",
+    "ats": "greenhouse",
+    "slug": "cariboubiosciences"
+  },
+  {
+    "name": "Allogene Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/allogene",
+    "ats": "greenhouse",
+    "slug": "allogene"
+  },
+  {
+    "name": "Arcellx",
+    "careers_url": "https://boards.greenhouse.io/arcellx",
+    "ats": "greenhouse",
+    "slug": "arcellx"
+  },
+  {
+    "name": "Sana Biotechnology",
+    "careers_url": "https://boards.greenhouse.io/sanabiotechnology",
+    "ats": "greenhouse",
+    "slug": "sanabiotechnology"
+  },
+  {
+    "name": "Lyell Immunopharma",
+    "careers_url": "https://boards.greenhouse.io/lyellimmunopharma",
+    "ats": "greenhouse",
+    "slug": "lyellimmunopharma"
+  },
+  {
+    "name": "Rocket Pharmaceuticals",
+    "careers_url": "https://boards.greenhouse.io/rocketpharma",
+    "ats": "greenhouse",
+    "slug": "rocketpharma"
+  },
+  {
+    "name": "Ultragenyx Pharmaceutical",
+    "careers_url": "https://boards.greenhouse.io/ultragenyx",
+    "ats": "greenhouse",
+    "slug": "ultragenyx"
+  },
+  {
+    "name": "Generation Bio",
+    "careers_url": "https://boards.greenhouse.io/generationbio",
+    "ats": "greenhouse",
+    "slug": "generationbio"
+  },
+  {
+    "name": "Voyager Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/voyagertherapeutics",
+    "ats": "greenhouse",
+    "slug": "voyagertherapeutics"
+  },
+  {
+    "name": "Wave Life Sciences",
+    "careers_url": "https://boards.greenhouse.io/wavelifesciences",
+    "ats": "greenhouse",
+    "slug": "wavelifesciences"
+  },
+  {
+    "name": "Stoke Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/stoketherapeutics",
+    "ats": "greenhouse",
+    "slug": "stoketherapeutics"
+  },
+  {
+    "name": "Arrowhead Pharmaceuticals",
+    "careers_url": "https://arrowheadpharma.wd1.myworkdayjobs.com/Arrowhead_Careers",
+    "ats": "workday",
+    "tenant": "arrowheadpharma",
+    "host": "wd1",
+    "site": "Arrowhead_Careers"
+  },
+  {
+    "name": "Vir Biotechnology",
+    "careers_url": "https://boards.greenhouse.io/virbiotechnology",
+    "ats": "greenhouse",
+    "slug": "virbiotechnology"
+  },
+  {
+    "name": "Denali Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/denalitherapeutics",
+    "ats": "greenhouse",
+    "slug": "denalitherapeutics"
+  },
+  {
+    "name": "Axsome Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/axsometherapeutics",
+    "ats": "greenhouse",
+    "slug": "axsometherapeutics"
+  },
+  {
+    "name": "Annexon",
+    "careers_url": "https://boards.greenhouse.io/annexon",
+    "ats": "greenhouse",
+    "slug": "annexon"
+  },
+  {
+    "name": "Praxis Precision Medicines",
+    "careers_url": "https://boards.greenhouse.io/praxisprecisionmedicines",
+    "ats": "greenhouse",
+    "slug": "praxisprecisionmedicines"
+  },
+  {
+    "name": "Arcutis Biotherapeutics",
+    "careers_url": "https://boards.greenhouse.io/arcutis",
+    "ats": "greenhouse",
+    "slug": "arcutis"
+  },
+  {
+    "name": "Vera Therapeutics",
+    "careers_url": "https://boards.greenhouse.io/veratherapeutics",
+    "ats": "greenhouse",
+    "slug": "veratherapeutics"
+  },
+  {
+    "name": "Genmab",
+    "careers_url": "https://genmab.wd3.myworkdayjobs.com/GenmabCareers",
+    "ats": "workday",
+    "tenant": "genmab",
+    "host": "wd3",
+    "site": "GenmabCareers"
+  },
+  {
+    "name": "argenx",
+    "careers_url": "https://argenx.wd3.myworkdayjobs.com/argenxcareers",
+    "ats": "workday",
+    "tenant": "argenx",
+    "host": "wd3",
+    "site": "argenxcareers"
+  },
+  {
+    "name": "Ascendis Pharma",
+    "careers_url": "https://ascendispharma.wd5.myworkdayjobs.com/Ascendis",
+    "ats": "workday",
+    "tenant": "ascendispharma",
+    "host": "wd5",
+    "site": "Ascendis"
+  },
+  {
+    "name": "BeOne Medicines (BeiGene)",
+    "careers_url": "https://beigene.wd1.myworkdayjobs.com/BeiGene_External_Career_Site",
+    "ats": "workday",
+    "tenant": "beigene",
+    "host": "wd1",
+    "site": "BeiGene_External_Career_Site"
+  },
+  {
+    "name": "Teva Pharmaceuticals",
+    "careers_url": "https://teva.wd3.myworkdayjobs.com/tevapharmaceuticalsexternalcareersite",
+    "ats": "workday",
+    "tenant": "teva",
+    "host": "wd3",
+    "site": "tevapharmaceuticalsexternalcareersite"
+  },
+  {
+    "name": "Alkermes",
+    "careers_url": "https://alkermes.wd1.myworkdayjobs.com/External",
+    "ats": "workday",
+    "tenant": "alkermes",
+    "host": "wd1",
+    "site": "External"
+  },
+  {
+    "name": "Supernus Pharmaceuticals",
+    "careers_url": "https://supernus.wd1.myworkdayjobs.com/Supernus_External_Career_Site",
+    "ats": "workday",
+    "tenant": "supernus",
+    "host": "wd1",
+    "site": "Supernus_External_Career_Site"
+  },
+  {
+    "name": "IQVIA",
+    "careers_url": "https://iqvia.wd1.myworkdayjobs.com/IQVIA",
+    "ats": "workday",
+    "tenant": "iqvia",
+    "host": "wd1",
+    "site": "IQVIA"
+  },
+  {
+    "name": "ICON plc",
+    "careers_url": "https://icon.wd3.myworkdayjobs.com/iconplc",
+    "ats": "workday",
+    "tenant": "icon",
+    "host": "wd3",
+    "site": "iconplc"
+  },
+  {
+    "name": "Fortrea",
+    "careers_url": "https://fortrea.wd1.myworkdayjobs.com/Fortrea",
+    "ats": "workday",
+    "tenant": "fortrea",
+    "host": "wd1",
+    "site": "Fortrea"
+  },
+  {
+    "name": "Charles River Laboratories",
+    "careers_url": "https://crl.wd1.myworkdayjobs.com/CRL_Careers",
+    "ats": "workday",
+    "tenant": "crl",
+    "host": "wd1",
+    "site": "CRL_Careers"
+  },
+  {
+    "name": "Medpace",
+    "careers_url": "https://medpace.wd5.myworkdayjobs.com/External",
+    "ats": "workday",
+    "tenant": "medpace",
+    "host": "wd5",
+    "site": "External"
+  },
+  {
+    "name": "Parexel",
+    "careers_url": "https://parexel.wd3.myworkdayjobs.com/parexel",
+    "ats": "workday",
+    "tenant": "parexel",
+    "host": "wd3",
+    "site": "parexel"
+  },
+  {
+    "name": "Syneos Health",
+    "careers_url": "https://syneoshealth.wd1.myworkdayjobs.com/syneoshealth",
+    "ats": "workday",
+    "tenant": "syneoshealth",
+    "host": "wd1",
+    "site": "syneoshealth"
+  },
+  {
+    "name": "Thermo Fisher Scientific (incl. PPD)",
+    "careers_url": "https://thermofisher.wd5.myworkdayjobs.com/thermofisher_career",
+    "ats": "workday",
+    "tenant": "thermofisher",
+    "host": "wd5",
+    "site": "thermofisher_career"
+  },
+  {
+    "name": "Labcorp",
+    "careers_url": "https://labcorp.wd1.myworkdayjobs.com/External",
+    "ats": "workday",
+    "tenant": "labcorp",
+    "host": "wd1",
+    "site": "External"
+  },
+  {
+    "name": "Veristat",
+    "careers_url": "https://boards.greenhouse.io/veristat",
+    "ats": "greenhouse",
+    "slug": "veristat"
+  },
+  {
+    "name": "BioAgilytix",
+    "careers_url": "https://bioagilytix.wd1.myworkdayjobs.com/bioagilytix",
+    "ats": "workday",
+    "tenant": "bioagilytix",
+    "host": "wd1",
+    "site": "bioagilytix"
+  },
+  {
+    "name": "Worldwide Clinical Trials",
+    "careers_url": "https://boards.greenhouse.io/worldwide",
+    "ats": "greenhouse",
+    "slug": "worldwide"
+  },
+  {
+    "name": "Premier Research",
+    "careers_url": "https://boards.greenhouse.io/premierresearch",
+    "ats": "greenhouse",
+    "slug": "premierresearch"
+  },
+  {
+    "name": "Lonza",
+    "careers_url": "https://lonza.wd3.myworkdayjobs.com/lonza_external_careers",
+    "ats": "workday",
+    "tenant": "lonza",
+    "host": "wd3",
+    "site": "lonza_external_careers"
+  },
+  {
+    "name": "Catalent",
+    "careers_url": "https://catalent.wd1.myworkdayjobs.com/Catalent_Careers",
+    "ats": "workday",
+    "tenant": "catalent",
+    "host": "wd1",
+    "site": "Catalent_Careers"
+  },
+  {
+    "name": "Zoetis",
+    "careers_url": "https://zoetis.wd5.myworkdayjobs.com/zoetis",
+    "ats": "workday",
+    "tenant": "zoetis",
+    "host": "wd5",
+    "site": "zoetis"
+  },
+  {
+    "name": "Elanco Animal Health",
+    "careers_url": "https://elanco.wd1.myworkdayjobs.com/Elanco_Careers",
+    "ats": "workday",
+    "tenant": "elanco",
+    "host": "wd1",
+    "site": "Elanco_Careers"
+  },
+  {
+    "name": "Organon",
+    "careers_url": "https://organon.wd5.myworkdayjobs.com/OrganonCareers",
+    "ats": "workday",
+    "tenant": "organon",
+    "host": "wd5",
+    "site": "OrganonCareers"
+  },
+  {
+    "name": "Viatris",
+    "careers_url": "https://viatris.wd5.myworkdayjobs.com/External",
+    "ats": "workday",
+    "tenant": "viatris",
+    "host": "wd5",
+    "site": "External"
+  },
+  {
+    "name": "EMD Serono (Merck KGaA)",
+    "careers_url": "https://merckgroup.wd3.myworkdayjobs.com/MerckGroup",
+    "ats": "workday",
+    "tenant": "merckgroup",
+    "host": "wd3",
+    "site": "MerckGroup"
+  },
+  {
+    "name": "CSL Behring",
+    "careers_url": "https://csl.wd1.myworkdayjobs.com/CSL_External",
+    "ats": "workday",
+    "tenant": "csl",
+    "host": "wd1",
+    "site": "CSL_External"
+  },
+  {
+    "name": "UCB",
+    "careers_url": "https://ucb.wd3.myworkdayjobs.com/ucbcareers",
+    "ats": "workday",
+    "tenant": "ucb",
+    "host": "wd3",
+    "site": "ucbcareers"
+  },
+  {
+    "name": "Sumitomo Pharma America",
+    "careers_url": "https://sumitomopharma.wd1.myworkdayjobs.com/SumitomoPharma_External_Career_Site",
+    "ats": "workday",
+    "tenant": "sumitomopharma",
+    "host": "wd1",
+    "site": "SumitomoPharma_External_Career_Site"
+  },
+  {
+    "name": "Lundbeck",
+    "careers_url": "https://lundbeck.wd3.myworkdayjobs.com/External",
+    "ats": "workday",
+    "tenant": "lundbeck",
+    "host": "wd3",
+    "site": "External"
+  },
+  {
+    "name": "Ipsen",
+    "careers_url": "https://ipsen.wd3.myworkdayjobs.com/Ipsencareers",
+    "ats": "workday",
+    "tenant": "ipsen",
+    "host": "wd3",
+    "site": "Ipsencareers"
+  }
+]
